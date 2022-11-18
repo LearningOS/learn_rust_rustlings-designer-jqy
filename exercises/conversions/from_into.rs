@@ -41,7 +41,7 @@ impl From<&str> for Person {
         }
         let parseAge = tmp[1].parse::<usize>();
         match parseAge {
-            Ok(e) => return Person{name: tmp[0].to_string(), age: parseAge.unwrap()},
+            Ok(e) => return Person{name: tmp[0].to_string(), age: e.unwrap()},
             Err(e) => return Person::default(),
         };
     }
